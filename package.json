@@ -1,0 +1,23 @@
+{
+  "name": "enigmatry",
+  "version": "1.0.0",
+  "description": "Enigmatry Test",
+  "main": "js/script.js",
+  "scripts": {
+    "watch:sass": "sass sass/style.scss css/style.css --watch",
+    "start": "npm-run-all watch:sass",
+    "compile:sass": "sass sass/style.scss css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
+    "compress:css": "sass css/style.prefix.css css/style.css --style=compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css"
+  },
+  "author": "Filip Dimic",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.7.4",
+    "concat": "^1.0.3",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^7.1.0",
+    "sass": "^1.58.3"
+  }
+}

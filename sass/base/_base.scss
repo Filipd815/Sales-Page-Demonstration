@@ -1,0 +1,52 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; // 1rem = 10px; 10px/16px = 62.5%
+    overflow-x: hidden;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: $color-white;
+    overflow: hidden;
+    position: relative;
+    padding-top: 12.7rem;
+    
+    @include respond(tab-port) {
+        padding-top: 9.3rem;
+    }
+    
+    @include respond(phone) {
+        padding-top: 7rem;
+    }
+    
+    &::-webkit-scrollbar {
+        width: .5rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $color-primary;
+    }
+
+    &::-webkit-scrollbar-thumb:window-inactive {
+        background-color: $color-gray-light;
+    }
+}
+
+a,
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
+::selection {
+    background-color: $color-secondary;
+    color: $color-white;
+}
+

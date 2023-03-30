@@ -1,0 +1,109 @@
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba($color-black, .6);
+    z-index: 20;
+    
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .2s linear;
+    
+    &.active {
+        pointer-events: unset;
+        opacity: 1;
+    }
+    
+    &__wrap {
+        max-width: 48rem;
+        width: 100%;
+        border-radius: .4rem;
+        padding: 2rem 3.2rem;
+        background-color: $color-white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        @include respond(phone) {
+            width: 90%;
+        }
+    }
+    
+    &__close {
+        position: absolute;
+        top: 2rem;
+        right: 3.2rem;
+        cursor: pointer;
+        font-size: 3rem;
+        line-height: 0.4;
+        color: $color-gray-dark;
+        transition: color .2s linear;
+        
+        &:hover {
+            color: $color-primary;
+        }
+    }
+    
+    .heading-tertiary {
+        margin-bottom: 1.6rem;
+    }
+    
+    &__paragraph {
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        color: $color-gray-dark;
+        margin-bottom: 2.4rem;
+    }
+    
+    &__form {
+        label {
+            display: none;
+        }
+        
+        input {
+            margin-bottom: 1.6rem;
+        }
+        
+        input,
+        textarea {
+            display: block;
+            width: 100%;
+            background: $color-gray-light;
+            padding: 1.9rem 1.6rem;
+            border-radius: .4rem .4rem 0 0;
+            outline: none;
+            border: none;
+            border-bottom: .1rem solid $color-gray-medium;
+            resize: none;
+    
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 1.4rem;
+            line-height: 1.8rem;
+            color: $color-gray-dark;
+            
+            &::placeholder {
+                font-family: 'Inter', sans-serif;
+                font-weight: 400;
+                font-size: 1.4rem;
+                line-height: 1.8rem;
+                color: $color-gray-dark;
+            }
+        }
+        
+        &__buttons {
+            margin-top: 2.4rem;
+            display: flex;
+            justify-content: flex-end;
+            
+            .btn:first-child {
+                margin-right: 1rem;
+            }
+        }
+    }
+}

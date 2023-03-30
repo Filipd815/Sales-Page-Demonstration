@@ -1,0 +1,30 @@
+// CONTAINER
+.container {
+	max-width: 123.6rem;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 1rem;
+	
+	@include respond(laptop) {
+		padding: 0 2rem;
+	}
+	
+	@include respond(tab-land) {
+		max-width: 108rem;
+	}
+	
+	&.no-gutters {
+		padding: 0;
+	}
+}
+
+.container-fluid {
+	margin: 0 auto;
+	padding: 0 4%;
+	width: 100%;
+	
+	&.no-gutters {
+		padding: 0;
+	}
+}
+

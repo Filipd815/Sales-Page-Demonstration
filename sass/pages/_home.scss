@@ -1,0 +1,583 @@
+.breadcrumbs {
+    margin: 4rem 0 2rem;
+    
+    @include respond(phone) {
+        margin: 3rem 0 1.8rem;
+    }
+    
+    * {
+        font-weight: 400;
+        font-size: 1.3rem;
+        line-height: 1.8rem;
+        color: $color-gray-dark;
+    }
+    
+    &__wrap {
+        display: flex;
+        align-items: center;
+    }
+    
+    &__link {
+        margin-right: 3rem;
+        color: $color-gray-dark;
+        transition: color .2s linear;
+        position: relative;
+        
+        &::after {
+            content: ">";
+            position: absolute;
+            right: -2.3rem;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        &:last-child {
+            &::after {
+                content: unset;
+            }
+            
+            &:hover {
+                color: $color-gray-dark;
+            }
+        }
+        
+        &:hover {
+            color: $color-primary;
+            
+            &::after {
+                color: $color-gray-dark;
+            }
+        }
+    }
+    
+}
+
+.product {
+    margin: .6rem 0;
+    
+    &__overview {
+        
+        &__title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+    
+            @include respond(tab-port) {
+                flex-direction: column;
+                align-items: normal;
+            }
+            
+            &__item {
+                display: flex;
+                align-items: center;
+                
+                &:first-child {
+                    @include respond(tab-port) {
+                        max-width: 50rem;
+                        width: 100%;
+                        height: 7rem;
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: flex-start;
+                    }
+                }
+                
+                &:last-child {
+    
+                    @include respond(tab-port) {
+                        margin-top: -2rem;
+                        align-self: flex-end;
+                    }
+                    
+                    @include respond(phone) {
+                        margin-top: -2.3rem;
+                    }
+                    
+                    @include respond(phone-extra-small) {
+                        margin-top: 1rem;
+                    }
+                }
+                
+                a {
+                    display: block;
+                    margin-right: 2rem;
+                    
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                    
+                    &:hover {
+                        
+                        svg path {
+                            fill: $color-primary;
+                        }
+                    }
+                }
+                
+                svg {
+                    display: block;
+                    
+                    path {
+                        fill: $color-gray-dark;
+                        transition: fill .2s linear;
+                    }
+                }
+            }
+        }
+        
+        &__slider {
+            margin-top: 3.6rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+    
+            @include respond(tab-port) {
+                flex-direction: column;
+            }
+    
+            @include respond(phone) {
+                margin-top: 2.4rem;
+            }
+            
+            &__item {
+                max-width: 69.6rem;
+                flex: 0 1 60%;
+                
+                @include respond(tab-port) {
+                    width: 100%;
+                    max-width: unset;
+                    flex: unset;
+                }
+                
+                &:last-child {
+                    max-width: 48.8rem;
+    
+                    @include respond(tab-port) {
+                        max-width: unset;
+                        flex: unset;
+                    }
+                    @include respond(phone) {
+                        margin-top: 2.4rem;
+                    }
+                }
+            }
+            
+            &__slider {
+                width: 100%;
+                max-width: 70rem;
+                height: 39.2rem;
+                position: relative;
+                overflow: hidden;
+                
+                display: flex;
+    
+                @include respond(phone) {
+                    height: 21rem;
+                }
+            }
+            
+            &__slide {
+                width: 100%;
+                max-width: 70rem;
+                height: 39.2rem;
+                position: absolute;
+                transition: .5s linear;
+                
+                @include respond(phone) {
+                    height: 21rem;
+                }
+                
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+            
+            &__btn {
+                position: absolute;
+                width: 4rem;
+                height: 4rem;
+                padding: 1rem;
+                border: none;
+                border-radius: 50%;
+                z-index: 10;
+                cursor: pointer;
+                background-color: $color-gray-light;
+                transform: translate(0, -50%);
+                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                &.prev {
+                    top: 50%;
+                    left: 2%;
+                    
+                    @include respond(tab-port) {
+                        left: 2%;
+                    }
+                }
+                
+                &.next {
+                    top: 50%;
+                    right: 2%;
+                    
+                    @include respond(tab-port) {
+                        right: 2%;
+                    }
+                }
+                
+                svg path {
+                    fill: $color-gray-dark;
+                }
+            }
+            
+            &__info {
+                background-color: $color-gray-light;
+                padding: 2.4rem 3.2rem;
+                
+                @include respond(phone) {
+                    padding: 2.4rem 2.4rem 3.2rem;
+                }
+            }
+            
+            &__quantity {
+                font-weight: 600;
+                font-size: 1.6rem;
+                line-height: 2.4rem;
+                color: $color-gray-dark;
+                margin-bottom: 1.3rem;
+                
+                span {
+                    color: $color-primary;
+                }
+            }
+            
+            .paragraph {
+                margin-bottom: 2.4rem;
+            }
+            
+            &__form {
+                
+                &__grid {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 2.2rem;
+                    
+                    @include respond(phone) {
+                        flex-direction: column;
+                        margin-bottom: 1.8rem;
+                    }
+                }
+                
+                &__item {
+                    flex: 0 1 47%;
+                    
+                    @include respond(phone) {
+                        &:first-child {
+                            margin-bottom: 1.6rem;
+                        }
+                    }
+                    
+                    label {
+                        display: block;
+                        background-color: $color-white;
+                        border-radius: .4rem .4rem 0 0;
+                        border-bottom: .1rem solid $color-gray-medium;
+                        padding: .4rem 1.2rem 1.2rem 1.6rem;
+                        
+                        font-weight: 400;
+                        font-size: 1.1rem;
+                        line-height: 1.8rem;
+                        color: $color-gray-dark-2;
+                    }
+                    
+                    select {
+                        display: block;
+                        width: 100%;
+                        margin-top: .4rem;
+                        border: 0;
+                        outline: none;
+                        background-color: transparent;
+                        font-weight: 400;
+                        font-size: 1.4rem;
+                        line-height: 1.8rem;
+                        color: $color-gray-dark;
+                        cursor: pointer;
+                    }
+                }
+                
+                &__checkbox {
+                    position: relative;
+                    display: block;
+                    padding-left: 3rem;
+                    margin-bottom: 2rem;
+                    cursor: pointer;
+                    font-size: 1.6rem;
+                    
+                    input {
+                        position: absolute;
+                        opacity: 0;
+                        cursor: pointer;
+                        
+                        &:checked ~ span {
+                            background-color: $color-secondary;
+                            
+                            &::after {
+                                display: block;
+                            }
+                        }
+                    }
+                    
+                    span {
+                        position: absolute;
+                        top: .3rem;
+                        left: 0;
+                        height: 2rem;
+                        width: 2rem;
+                        border-radius: .4rem;
+                        background-color: $color-white;
+                        
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            left: .8rem;
+                            top: .4rem;
+                            width: .5rem;
+                            height: 1rem;
+                            border: solid $color-white;
+                            border-width: 0 .3rem .3rem 0;
+                            transform: rotate(45deg);
+                        }
+                    }
+                }
+                
+                &__buttons {
+                    margin-top: 1.5rem;
+    
+                    @include respond(phone) {
+                        display: flex;
+                        margin-top: 0;
+                    }
+                    
+                    @include respond(phone-extra-small) {
+                        flex-direction: column;
+                    }
+    
+                    .btn {
+                        @include respond(phone) {
+                            width: 50%;
+    
+                            &:first-child {
+                                margin-right: .5rem;
+                            }
+    
+                            &:last-child {
+                                margin-left: .5rem;
+                            }
+                        }
+                        
+                        @include respond(phone-extra-small) {
+                            width: 100%;
+    
+                            &:first-child {
+                                margin-right: 0;
+                                margin-bottom: 1rem;
+                            }
+    
+                            &:last-child {
+                                margin-left: 0;
+                            }
+                        }
+        
+                        &:first-child {
+                            margin-right: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    &__info {
+    
+        @include respond(phone) {
+            margin-top: 5rem;
+        }
+        
+        &__tabs {
+            border-bottom: .1rem solid $color-gray-medium;
+            
+            ul {
+                list-style: none;
+                margin: 1.8rem 0;
+                display: flex;
+                
+                @include respond(phone) {
+                    justify-content: space-between;
+                }
+                
+                @include respond(phone-extra-small) {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                
+                li {
+                    margin-right: 3.2rem;
+    
+                    @include respond(phone) {
+                        margin-right: 0;
+                    }
+                    
+                    input[type="radio"] {
+                        display: none;
+                        
+                        &.active ~ label {
+                            color: $color-primary;
+                        }
+                    }
+                    
+                    label {
+                        font-weight: 600;
+                        font-size: 1.6rem;
+                        line-height: 2.4rem;
+                        color: $color-gray-dark;
+                        transition: color .2s linear;
+                        cursor: pointer;
+                        
+                        &:hover {
+                            color: $color-primary;
+                        }
+                    }
+                }
+            }
+        }
+        
+        &__content {
+            margin: 6rem 0 6.5rem;
+    
+            @include respond(tab-port) {
+                margin: 4rem 0;
+                
+                > .container {
+                    padding: 0;
+                }
+            }
+        }
+        
+        &__grid {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            
+            @include respond(tab-port) {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            &.product__info__grid--1 {
+                display: flex;
+            }
+            
+            &.product__info__grid--2,
+            &.product__info__grid--3 {
+                display: none;
+            }
+        }
+        
+        &__item {
+            
+            &:first-child {
+    
+                @include respond(laptop) {
+                    margin-right: 2rem;
+                }
+    
+                @include respond(tab-port) {
+                    margin-right: 0;
+                    margin-top: 2.3rem;
+                    padding: 0 2rem;
+                    order: 1;
+                }
+            }
+            
+            .heading-secondary {
+                margin-bottom: 3.2rem;
+                
+                @include respond(phone) {
+                    margin-bottom: 2.4rem;
+                }
+            }
+            
+            .paragraph {
+                margin-bottom: 2.5rem;
+                max-width: 48.8rem;
+                width: 100%;
+    
+                @include respond(tab-port) {
+                    max-width: unset;
+                }
+            }
+            
+            img {
+                display: block;
+                
+                @include respond(laptop) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    
+    &__specs {
+        background-color: $color-gray-light;
+        
+        &__wrap {
+            padding: 4rem 0 8rem;
+            
+            @include respond(phone) {
+                padding: 3.2rem 0 6rem;
+            }
+            
+            .heading-secondary {
+                margin-bottom: 3.2rem;
+            }
+        }
+        
+        &__overflow {
+            overflow-x: auto;
+        }
+        
+        &__table {
+            border-collapse: collapse;
+            width: 100%;
+            white-space: nowrap;
+            
+            th {
+                font-family: 'Inter', sans-serif;
+                font-weight: 600;
+                font-size: 1.4rem;
+                line-height: 2.4rem;
+                color: $color-primary;
+            }
+            
+            th, td {
+                padding: 1rem 0;
+                text-align: left;
+                
+                @include respond(tab-port) {
+                    padding: 1rem 2rem 1rem 0;
+                }
+                
+                &:first-child {
+                    padding-left: 2rem;
+                }
+            }
+            
+            tbody tr:nth-child(2n+1) {
+                background-color: $color-white;
+            }
+        }
+    }
+}

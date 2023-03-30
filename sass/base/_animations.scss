@@ -1,0 +1,25 @@
+// Loader
+@keyframes dot {
+    50% {
+        transform: translateX(96px);
+    }
+}
+
+@keyframes dots {
+    50% {
+        transform: translateX(-31px);
+    }
+}
+
+// Navigation
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
